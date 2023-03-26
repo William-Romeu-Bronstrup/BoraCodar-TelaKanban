@@ -4,10 +4,38 @@
   box-sizing: border-box;
 }
 
+/*scroll no kanban*/
+
 :root {
   font-size: 62.5%;
+  --bg-color: #7c3aed;
+  --bg-kanban-color: #fbfaff;
 }
 
 body * {
   font-size: 1.6rem;
+}
+
+body {
+  display: flex;
+  background-color: var(--bg-color);
+}
+
+#menu-lateral {
+  background-color: var(--bg-color);
+  height: 100vh;
+  max-width: 17.5rem;
+  width: 17.5rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#kanban {
+  background-color: var(--bg-kanban-color);
+  width: 100vw;
+
+  border-top-left-radius: 3.2rem;
+  margin-top: 0.4rem;
+  padding: 3.2rem 4.8rem;
 }
