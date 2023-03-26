@@ -8,10 +8,12 @@
 
 :root {
   font-size: 62.5%;
-  --bg-color: #7c3aed;
   --default-color: #fff;
+  --bg-color: #7c3aed;
   --bg-kanban-color: #fbfaff;
   --menu-lateral-color: #cab3ff;
+
+  --title-color: #403937;
 }
 
 body * {
@@ -85,4 +87,38 @@ a {
   border-top-left-radius: 3.2rem;
   margin-top: 0.4rem;
   padding: 3.2rem 4.8rem;
+}
+
+#kanban header {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+#kanban header #titulo-login {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#kanban header #titulo-login div {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+#kanban header #titulo-login div h1 {
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 4rem;
+  color: var(--title-color);
+}
+
+#kanban header #titulo-login div img {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+}
+
+#kanban #filtro-pesquisa button {
 }
