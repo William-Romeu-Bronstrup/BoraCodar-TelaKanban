@@ -17,6 +17,8 @@ responsividade aos 700px
   --menu-lateral-color: #cab3ff;
 
   --title-color: #403937;
+  --description-color: #756966;
+  --description-tags: #E2D6FF;
   --placeholder-input-color: #7c7c8a;
 }
 
@@ -174,3 +176,57 @@ a {
 #kanban #filtro-pesquisa input:placeholder {
   color: var(--placeholder-input-color);
 }
+
+section {
+  margin-top: 3.2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4.8rem;
+}
+
+.column {
+  display: grid;
+  row-gap: 2.4rem;
+  padding: 2.4rem;
+}
+
+.column div {
+  width: 32rem;
+  height: 15.3rem;
+  border-radius: 8px;
+  padding: 2.4rem;
+  background-color: var(--default-color);
+  box-shadow: 0px 4px 16px #EAE2FD;
+}
+
+.column p {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  color: var(--title-color);
+}
+
+.column div h4 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.82rem;
+}
+
+.column div p {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.82rem;
+  color: var(--description-color);
+  margin: 1rem 0;
+}
+
+.column div span {
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.43rem;
+  color: var(--bg-color);
+  background-color: var(--description-tags);
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
