@@ -7,6 +7,7 @@
 /*
 1 - responsividade
 2 - diminuir as description com js
+3 - tirar propriedade quanto aumentar a largura pq o bagulho fica ativado
 */
 
 :root {
@@ -235,6 +236,58 @@ section {
 
 #menu-lateral-responsivo {
   display: none;
+}
+
+#menu-mobile {
+  margin: auto;
+}
+
+#menu-mobile nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20rem;
+  height: 100%;
+}
+
+#menu-mobile nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+#menu-mobile nav ul li {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  gap: 1rem;
+}
+
+dialog::backdrop {
+  background-color: rgba(0 0 0 / 0.5);
+}
+
+dialog {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem rgb(0 0 0 / 0.5);
+  background-color: var(--bg-color);
+
+  width: 70%;
+  height: 50%;
+}
+
+dialog a {
+  color: var(--default-color);
+}
+
+#btnClose {
+  position: absolute;
+  bottom: 1.3rem;
+  right: 2rem;
 }
 
 @media screen and (max-width: 1200px) {

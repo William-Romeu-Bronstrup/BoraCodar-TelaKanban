@@ -68,7 +68,43 @@
               alt="Logo da empresa fictícia com a cor branca em formato de furacão"
             />
           </figure>
-          <button>Menu</button>
+          <button onclick="openModal()">Menu</button>
+
+          <dialog id="menu-mobile">
+            <button id="btnClose" onclick="closeModal()">Fechar</button>
+            <nav>
+              <ul>
+                <li>
+                  <img
+                    src="assets/tablet-portrait.svg"
+                    alt="Imagem de um tablet, simbolizando as telas"
+                  />
+                  <a href="#">Boards</a>
+                </li>
+                <li>
+                  <img
+                    src="assets/people.svg"
+                    alt="Imagem de duas pessoas que simboliza equipe"
+                  />
+                  <a href="#">Equipes</a>
+                </li>
+                <li>
+                  <img
+                    src="assets/document-text.svg"
+                    alt="Imagem de um documento que simboliza os relatórios"
+                  />
+                  <a href="#">Relatórios</a>
+                </li>
+                <li>
+                  <img
+                    src="assets/cog.svg"
+                    alt="Imagem de uma engranagem que simboliza as configurações do software"
+                  />
+                  <a href="#">Ajustes</a>
+                </li>
+              </ul>
+            </nav>
+          </dialog>
         </div>
       </div>
       <header>

@@ -1,1 +1,9 @@
-console.log("js funcionando")
+const modal = document.getElementById("menu-mobile")
+
+function openModal() {
+  modal.showModal()
+}
+
+function closeModal() {
+  modal.close()
+}
