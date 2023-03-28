@@ -5,8 +5,8 @@
 }
 
 /*
-scroll no kanban
-responsividade aos 700px
+1 - responsividade
+2 - diminuir as description com js
 */
 
 :root {
@@ -194,7 +194,7 @@ section {
 }
 
 .column div {
-  width: 32rem;
+  max-width: 32rem;
   height: 15.3rem;
   border-radius: 8px;
   padding: 2.4rem;
@@ -233,4 +233,30 @@ section {
   padding: 4px 8px;
 }
 
+@media screen and (max-width: 1360px) {
+  section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+@media screen and (max-width: 1000px) {
+  section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  #kanban #filtro-pesquisa {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  #kanban {
+    padding: 1.6rem 2.4rem;
+  }
+
+  #kanban header #titulo-login div h1 {
+    font-size: 2.6rem;
+    line-height: 3rem;
+  }
+}
