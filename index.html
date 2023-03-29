@@ -136,6 +136,7 @@
             <img src="assets/search.svg" alt="" />
             <input
               type="text"
+              id="inputSearch"
               placeholder="Busque por cards, assuntos ou responsáveis..."
               maxlength="50"
             />
@@ -143,9 +144,13 @@
         </div>
       </header>
       <section>
-        <div class="column">
+        <div
+          class="drop column"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
           <p>A fazer</p>
-          <div>
+          <div id="drag1" draggable="true" ondragstart="drag(event)">
             <h4>#boraCodar um Kanban 🧑‍💻</h4>
             <p class="description">
               Novo desafio do #boraCodar da Rocketseat, onde é proposto
@@ -154,7 +159,7 @@
             <span>rocketseat</span>
             <span>desafio</span>
           </div>
-          <div>
+          <div id="drag2" draggable="true" ondragstart="drag(event)">
             <h4>Manter a ofensiva 🔥</h4>
             <p class="description">
               Manter minha atividade na plataforma da Rocketseat para não perder
@@ -162,7 +167,7 @@
             </p>
             <span>rocketseat</span>
           </div>
-          <div>
+          <div id="drag3" draggable="true" ondragstart="drag(event)">
             <h4>Almoçar 🥗</h4>
             <p class="description">
               Me alimentar, aproveitando um momento de descanso para recarregar
@@ -171,9 +176,13 @@
             <span>autocuidado</span>
           </div>
         </div>
-        <div class="column">
+        <div
+          class="drop column"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
           <p>Fazendo</p>
-          <div>
+          <div id="drag4" draggable="true" ondragstart="drag(event)">
             <h4>Conferir o novo desafio 🚀</h4>
             <p class="description">
               Conferir o novo projeto do #boraCodar para fazê-lo da melhor
@@ -182,7 +191,7 @@
             <span>rocketseat</span>
             <span>desafio</span>
           </div>
-          <div>
+          <div id="drag5" draggable="true" ondragstart="drag(event)">
             <h4>Ser incrível 😎</h4>
             <p class="description">
               Sempre me lembrar de manter minha autenticidade e espalhar amor.
@@ -190,9 +199,13 @@
             <span>autocuidado</span>
           </div>
         </div>
-        <div class="column">
+        <div
+          class="drop column"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
           <p>Feito</p>
-          <div>
+          <div id="drag6" draggable="true" ondragstart="drag(event)">
             <h4>#boraCodar uma página de login 🧑‍💻‍</h4>
             <p class="description">
               Novo desafio do #boraCodar da Rocketseat, onde é proposto
@@ -201,7 +214,7 @@
             <span>rocketseat</span>
             <span>desafio</span>
           </div>
-          <div>
+          <div id="drag7" draggable="true" ondragstart="drag(event)">
             <h4>#boraCodar uma página de clima ‍🧑‍💻</h4>
             <p class="description">
               Novo desafio do #boraCodar da Rocketseat, onde é proposto
@@ -210,7 +223,7 @@
             <span>rocketseat</span>
             <span>desafio</span>
           </div>
-          <div>
+          <div id="drag8" draggable="true" ondragstart="drag(event)">
             <h4>#boraCodar um conversor 🧑‍💻</h4>
             <p class="description">
               Novo desafio do #boraCodar da Rocketseat, onde é proposto

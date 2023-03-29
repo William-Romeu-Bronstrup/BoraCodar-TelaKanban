@@ -5,9 +5,8 @@
 }
 
 /*
-1 - responsividade
-2 - diminuir as description com js
 3 - tirar propriedade quanto aumentar a largura pq o bagulho fica ativado
+4 - funcionalidade de pesquisa / filtro se der
 */
 
 :root {
@@ -372,7 +371,7 @@ dialog a {
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 780px) {
   section {
     place-items: center;
     grid-template-columns: repeat(1, 1fr);
