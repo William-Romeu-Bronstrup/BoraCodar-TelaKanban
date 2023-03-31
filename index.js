@@ -1,18 +1,37 @@
 const modal = document.getElementById("menu-mobile")
 const descriptionCard = document.querySelectorAll(".description")
+const dropItArea = document.querySelectorAll(".dropIt")
 const cards = document.querySelectorAll("section div div")
 const inputSearch = document.getElementById("inputSearch")
+
+for (let i = 0; i < dropItArea.length; i++) {
+  dropItArea[i].style.display = "none"
+}
+
+document.addEventListener("dragleave", (e) => {
+  console.log(e.target)
+
+  for (let i = 0; i < dropItArea.length; i++) {
+    dropItArea[i].style.display = "block"
+  }
+})
+
+document.addEventListener("dragend", (e) => {
+  // console.log(e.target)
+
+  for (let i = 0; i < dropItArea.length; i++) {
+    dropItArea[i].style.display = "none"
+  }
+})
 
 /* Filtro de pesquisa pelo input */
 
 inputSearch.addEventListener("keyup", (e) => {
-  let valorDigitado = e.target.value
+  let valorDigitado = e.target.value.toLowerCase()
 
   for (let i = 0; i < cards.length; i++) {
-    if (!cards[i].innerText.includes(valorDigitado)) {
+    if (!cards[i].innerText.toLowerCase().includes(valorDigitado)) {
       cards[i].style.display = "none"
-
-      //cards[i].parentElement.children[0].style.display = "none"
     } else {
       cards[i].style.display = "block"
     }
@@ -23,9 +42,9 @@ inputSearch.addEventListener("keyup", (e) => {
 
 for (let i = 0; i < descriptionCard.length; i++) {
   if (descriptionCard[i].innerText.length > 70) {
-    let teste = descriptionCard[i].innerText.substring(0, 65).trim()
+    let search = descriptionCard[i].innerText.substring(0, 65).trim()
 
-    descriptionCard[i].innerText = `${teste}...`
+    descriptionCard[i].innerText = `${search}...`
   }
 }
 
@@ -47,11 +66,13 @@ function drag(ev) {
 function drop(ev) {
   ev.preventDefault()
 
-  console.log(ev.target)
+  if (ev.target.className == "dropIt") {
+    let data = ev.dataTransfer.getData("text")
 
-  let data = ev.dataTransfer.getData("text")
-
-  ev.target.appendChild(document.getElementById(data))
+    ev.target.parentElement.appendChild(document.getElementById(data))
+  } else {
+    console.log("nao deixu")
+  }
 }
 
 function allowDrop(ev) {

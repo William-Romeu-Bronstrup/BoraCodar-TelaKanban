@@ -196,7 +196,6 @@ section {
 .column div {
   max-width: 32rem;
   height: 15.3rem;
-  border-radius: 8px;
   padding: 2.4rem;
   background-color: var(--default-color);
   box-shadow: 0px 4px 16px #eae2fd;
@@ -300,6 +299,22 @@ dialog a {
   bottom: 1.3rem;
   right: 2rem;
   cursor: pointer;
+}
+
+.dropIt {
+  background-color: #cab3ff;
+  max-width: 32rem;
+  height: 15.3rem;
+  border: 5px dashed #7c3aed;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.dropIt {
+  font-size: 3rem;
+  color: #7c3aed;
+  text-shadow: 2px #000;
 }
 
 @media screen and (max-width: 1200px) {
