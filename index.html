@@ -125,14 +125,25 @@
           </figure>
         </div>
         <div id="filtro-pesquisa">
-          <button>
-            <img
-              src="./assets/filter.svg"
-              alt="imagem com três barrinhas brancas"
-            />
-            <span>Filtrar</span>
-          </button>
-          <div>
+          <div id="boxOfFilter">
+            <button id="btnFilter">
+              <img
+                src="./assets/filter.svg"
+                alt="imagem com três barrinhas brancas"
+              />
+              <span>Filtrar</span>
+            </button>
+
+            <article class="filter" id="show">
+              <ul>
+                <li>Título</li>
+                <li>Descrição</li>
+                <li>Tags</li>
+              </ul>
+            </article>
+          </div>
+
+          <div id="boxOfInputSearch">
             <img src="assets/search.svg" alt="" />
             <input
               type="text"
@@ -143,6 +154,7 @@
           </div>
         </div>
       </header>
+      <div id="filtrosSelecionados"></div>
       <section>
         <div class="drop column">
           <p>A fazer</p>
