@@ -191,6 +191,12 @@ a {
   color: var(--bg-color);
 }
 
+#allFilters {
+  margin-top: 8px;
+  color: var(--bg-color);
+  display: none;
+}
+
 #filtrosSelecionados span {
   margin-right: 20px;
 }

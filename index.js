@@ -12,6 +12,7 @@ const buttonFilter = document.getElementById("btnFilter")
 const filter = document.querySelector(".filter")
 const filterItems = document.querySelectorAll(".filter ul li")
 const filtredItems = document.getElementById("filtrosSelecionados")
+//const allFilters = document.getElementById("allFilters")
 
 /* Deixa as áreas do drop "vazias" como o display none */
 
@@ -74,9 +75,31 @@ for (let i = 0; i < filterItems.length; i++) {
 inputSearch.addEventListener("keyup", (e) => search(e))
 
 function search(e) {
-  console.log(tags)
-
   let valorDigitado = e.target.value.toLowerCase()
+
+  // fazer a pesquisa dos cards de acordo com o filtro, sendo o filtro por todos quando nenhum for selecionado
+
+  for (let value = 0; value < cardsTitle.length; value++) {
+    if (tags[value] == 0) {
+      if (!cardsTitle[value].innerText.toLowerCase().includes(valorDigitado)) {
+        cards[value].style.display = "none"
+      } else {
+        cards[value].style.display = "block"
+      }
+    }
+  }
+
+  for (let value = 0; value < cardsDescription.length; value++) {
+    if (tags[value] == 1) {
+      if (
+        !cardsDescription[value].innerText.toLowerCase().includes(valorDigitado)
+      ) {
+        cards[value].style.display = "none"
+      } else {
+        cards[value].style.display = "block"
+      }
+    }
+  }
 
   for (let i = 0; i < cards.length; i++) {
     if (!cards[i].innerText.toLowerCase().includes(valorDigitado)) {
