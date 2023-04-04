@@ -45,22 +45,26 @@ buttonFilter.addEventListener("click", () => {
   }
 })
 
-/* Escolha da opção de filtro */
+/* Escolha da opção de filtro, com validação de não poder escolher o mesmo */
 
+let tags = []
 for (let i = 0; i < filterItems.length; i++) {
   filterItems[i].addEventListener("click", (e) => {
+    filterItems[i].classList.toggle("itemSelecionado")
+
     let filtro = e.target.innerText.toLowerCase()
-
     let span = document.createElement("span")
-
     span.innerText = `* ${filtro}`
-    // corrigir erro de validação
 
-    for (let child of filtredItems.children) {
-      console.log(child.innerText)
+    for (let f = 0; f < 3; f++) {
+      if (tags[f] == i) {
+        filtredItems.removeChild(filtredItems.children[f])
+        tags.splice(f, 1)
+        return
+      }
     }
 
-    filterItems[i].classList.toggle("itemSelecionado")
+    tags.push(i)
     filtredItems.appendChild(span)
   })
 }
@@ -70,6 +74,8 @@ for (let i = 0; i < filterItems.length; i++) {
 inputSearch.addEventListener("keyup", (e) => search(e))
 
 function search(e) {
+  console.log(tags)
+
   let valorDigitado = e.target.value.toLowerCase()
 
   for (let i = 0; i < cards.length; i++) {
