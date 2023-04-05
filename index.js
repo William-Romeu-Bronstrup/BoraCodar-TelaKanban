@@ -72,42 +72,61 @@ for (let i = 0; i < filterItems.length; i++) {
 
 /* Filtro de pesquisa pelo input */
 
-inputSearch.addEventListener("keyup", (e) => search(e))
+inputSearch.addEventListener("keyup", (e) => search(e, ...tags))
 
-function search(e) {
+// arg = ""
+function search(e, ...arg) {
   let valorDigitado = e.target.value.toLowerCase()
-
-  // fazer a pesquisa dos cards de acordo com o filtro, sendo o filtro por todos quando nenhum for selecionado
-
-  for (let value = 0; value < cardsTitle.length; value++) {
-    if (tags[value] == 0) {
-      if (!cardsTitle[value].innerText.toLowerCase().includes(valorDigitado)) {
-        cards[value].style.display = "none"
+  
+  if([...arg] == "") {
+    for (let i = 0; i < cards.length; i++) {
+      if (!cards[i].innerText.toLowerCase().includes(valorDigitado)) {
+        cards[i].style.display = "none"
       } else {
-        cards[value].style.display = "block"
+        cards[i].style.display = "block"
       }
     }
   }
 
-  for (let value = 0; value < cardsDescription.length; value++) {
-    if (tags[value] == 1) {
-      if (
-        !cardsDescription[value].innerText.toLowerCase().includes(valorDigitado)
-      ) {
-        cards[value].style.display = "none"
-      } else {
-        cards[value].style.display = "block"
-      }
-    }
-  }
+  arg.forEach((e) => {
 
-  for (let i = 0; i < cards.length; i++) {
-    if (!cards[i].innerText.toLowerCase().includes(valorDigitado)) {
-      cards[i].style.display = "none"
-    } else {
-      cards[i].style.display = "block"
+    switch(e) {
+      case 0:
+          for (let value = 0; value < cardsTitle.length; value++) {
+
+            if (!cardsTitle[value].innerText.toLowerCase().includes(valorDigitado)) {
+              cards[value].style.display = "none"
+            } else {
+              cards[value].style.display = "block"
+            }
+          }
+        break;
+
+      case 1:
+        for (let value = 0; value < cardsDescription.length; value++) {
+          
+          if (!cardsDescription[value].innerText.toLowerCase().includes(valorDigitado)) {
+              cards[value].style.display = "none"
+          } else {
+              cards[value].style.display = "block"
+          }
+
+        }
+        break;
+
+      case 2:
+        for (let value = 0; value < cardsTags.length; value++) {
+          
+          if (!cardsTags[value].innerText.toLowerCase().includes(valorDigitado)) {
+            cardsTags[value].parentElement.style.display = "none"
+          } else {
+            cardsTags[value].parentElement.style.display = "block"
+          }
+
+        }
+        break;
     }
-  }
+  })
 }
 
 /* Description Card Length */
